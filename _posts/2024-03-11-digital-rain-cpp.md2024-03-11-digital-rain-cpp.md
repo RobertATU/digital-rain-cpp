@@ -34,9 +34,11 @@ A bullet list:
 
 You can add an impage that has been uploaded to the repository in a /docs/assets/images folder.
 
-<img src="https://raw.githubusercontent.com/robertatu/digital-rain-cpp/main/doc/assets/code.png" width="400" height="300">
-<img src="https://raw.githubusercontent.com/robertatu/digital-rain-cpp/main/doc/assets/code2.png" width="400" height="300">
-<img src="https://raw.githubusercontent.com/robertatu/digital-rain-cpp/main/doc/assets/code3.png" width="400" height="300">
+<img src="https://raw.githubusercontent.com/robertatu/digital-rain-cpp/main/doc/assets/Main.png" width="400" height="300">
+<img src="https://raw.githubusercontent.com/robertatu/digital-rain-cpp/main/doc/assets/RainClass.png" width="400" height="300">
+<img src="https://raw.githubusercontent.com/robertatu/digital-rain-cpp/main/doc/assets/Cloud.png" width="400" height="300">
+
+
 <img src="https://raw.githubusercontent.com/robertatu/digital-rain-cpp/main/doc/assets/Operation.png" width="400" height="300">
 <img src="https://raw.githubusercontent.com/robertatu/digital-rain-cpp/main/doc/assets/RainHeader.png" width="400" height="300">
 <img src="https://raw.githubusercontent.com/robertatu/digital-rain-cpp/main/doc/assets/C++Futures10000.png" width="400" height="20">
