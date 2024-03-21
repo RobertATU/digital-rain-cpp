@@ -2,7 +2,7 @@
 ## Introduction
 In this report, I will detail the design, implementation and testing of a digital rainfall matrix project using modern C++ libraries. The aim of the project is to create an aesthetically pleasing visual effect resembling rainfall similar to what is seen in the Matrix movies within the visual studio terminal. 
 
-In order to complete this project I had to explore different design decisions, algorithms, problem-solving strategies and the implementation of modern C++ features.
+In order to complete this project I had to explore different design decisions, algorithms, problem-solving strategies and the implementation of modern C++ features. The primary source of information of all these modern C++ features came from [cppreference.com](https://en.cppreference.com/w/)[1]
 
 ## Design & Test
 At the core of this projects design is the Rain class which has a corresponding header file and cpp file. The class is responsible for managing the individual raindrops which are made up of characters stored in a vector. It features functions that are responsible for managing how the raindrops fall. This is elaborated on in the Algorithm section of this report. This algorithm to give the vector of characters an animated apperance is executed over and over for as many threads are created in the Raining() function until eventually the threads are joined at the end. The Raining() function was originally contained within the Rain class however since it creates multiple rain instances within it I created a seperate Cloud class to call it.
@@ -11,7 +11,7 @@ At the core of this projects design is the Rain class which has a corresponding 
 <img src="https://raw.githubusercontent.com/robertatu/digital-rain-cpp/main/doc/assets/RainClass.png" width="400" height="300">
 <img src="https://raw.githubusercontent.com/robertatu/digital-rain-cpp/main/doc/assets/Cloud.png" width="400" height="300">
 
-Each of these raindrops are called and allowed to call their function asynchronously as a result of using threads. 
+Each of these instances are allowed to call their Fall() function asynchronously as a result of creating a vector of threads eac threads. 
 When deciding how I would achieve this as asynchronous functionality I explored using both threads and futures. From my research I found that they where similiar in functionality. Futures can create threads when needed however it will not always do so, while using the threads library gives more explicit control over the creation of threads. From my testing with both using the task manager I found using threads better for resource usage. Memory was the resource effected by the increase of the number of threads and futures. Below are the results of creating large amounts of threads and then the same number of futures. As can be seen the threads seem to have less overhead as they use far less memory. This is why I decided to threads would suit the project better.
 
 10,000 Threads:
@@ -52,21 +52,11 @@ This projects was designed with an abundance of modern C++ features and library 
 
 - Concurency protection using mutexes - The use of mutexs keeps multiple instances from accessing the same resources at the same time therefore preventing unexpected results. In this project the mutex protects the GoToXY function, this ensures that the characters are printed in the correct positions
 
+## Modern C++
+
+[1] [Online]. cppreference.com. Available: [cppreference.com](https://en.cppreference.com/w/). Accessed: March 21, 2024.
 
 
-
-
-
-
-
-
-
-
-Code can be highlighted with `backticks`.
-
-Hyperlinks look like this: [GitHub Help](https://help.github.com/).
-
-You can add an impage that has been uploaded to the repository in a /docs/assets/images folder.
 
 
 
