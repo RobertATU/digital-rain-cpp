@@ -22,6 +22,12 @@ When deciding how I would achieve this as asynchronous functionality I explored 
 
 <img src="https://raw.githubusercontent.com/robertatu/digital-rain-cpp/main/doc/assets/C++Futures10000.png" width="400" height="20">
 
+**Code improvement**
+
+Late on in the development of this project I thought of a simple more convincing and more memory effiecent way of achieve an infinite loop of rain. Instead of creating a massive around of threads such like the example of 10,000 I had originally used I could just add a While one loop to the Fall() function and at the end of each drops life cycle I can assign them a new x postion that they will use when the while loop starts them back up at the top of the screen. Unlike the previous method this will actually give an infinite loop as the Drop() function will never actually be left wheras the previous way would temporarily have an empty screen when the 10,000 threads eventually finished and before the next the next 10,000 started. This new method also massivly brought the memory usage down from 16MB to 2MB
+
+ <img src="https://raw.githubusercontent.com/robertatu/digital-rain-cpp/main/doc/assets/Code improvement.png" width="450" height="300">
+  <img src="https://raw.githubusercontent.com/robertatu/digital-rain-cpp/main/doc/assets/Improved memory usage.png" width="450" height="100">
 
 The Fall() function which is responsible for printing the characters use a mutex as without it each of the rain instances will interrupt each other resulting in unexpected results. The Rain class features multiple constructers and overloaded operators. It also features testing which is contained within the RainTest header and cpp files. In the main cpp file the tests are first called and displayed on the terminal for 3 seconds before the screen is cleared and the rainfall starts. To achieve this an instance of the cloud class is created and the Raining() function is called. To keep the rainfall continuously going the call to the Raining() function is contained within a While(1) loop.
 
