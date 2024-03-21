@@ -35,6 +35,7 @@ The Fall() function which is responsible for printing the characters use a mutex
 
 ## Algorithm
 To achieve the desired result for this project of simulating a visually pleasing matrix like rainfall effect multiple instances of the Rain class are created within a vector of threads in the Raining() function. Each of these instances represent an individual raindrop. Each of these drops call the Fall() function which animates the drop going down the screen by iteratively printing each element on a fixed x position and a y position which is incremented as the loop goes on. This gets followed by a blank space which clears the character at the top to give a falling effect. The GoToXY() function is used to manipulate and print in the specific position in the console. The x position of the instance which stays completely fixed is determined by a random number generator which uses time since epoch in its random engine to decide on an x position between 0 and 119 to assign to the instance. Below is an example of multiple instances of this algorithm operating simultaneously.
+
 <img src="https://raw.githubusercontent.com/robertatu/digital-rain-cpp/main/doc/assets/Operation.png" width="400" height="300">
 
 ## Problem-solving
